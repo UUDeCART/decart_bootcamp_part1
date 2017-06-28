@@ -1,24 +1,31 @@
-import os
 from nose.tools import assert_equal
-import stat
-import shutil
 
-def permissions_quiz():
-    test_file = os.path.join(os.path.expanduser("~"), 
-                             "work",
-                             "OutbreakDetection",
-                             "Obituaries",
-                             "obits.txt")
+def bp_hr_ge200(answer=-1):
     try:
-        assert_equal( os.path.exists(test_file), True)
-        print('obits.txt copied correctly.')
+        assert_equal( 39, answer)
+        print('number of patients identified correctly.')
     except:
-        print('obits.txt NOT copied correctly')
+        print('number of patients NOT identified correctly.')
+
+def mitral_files(answer=-1):
     try:
-        mode = oct(stat.S_IMODE(os.stat(test_file).st_mode))
-        assert_equal(mode, oct(0o444))
-        print("obits.txt mode set correctly")
+        assert_equal( 2, answer)
+        print('number of mitral audible files identified correctly.')
     except:
-        print("obits.txt mode NOT set correctly. The mode was set to %s"%mode)
+        print('number of mitral audible files NOT identified correctly.')
+
+def wave_files(answer=-1):
+    try:
+        assert_equal( 11, answer)
+        print('number of WAVE audible files identified correctly.')
+    except:
+        print('number of WAVE audible files NOT identified correctly.')
+
+def find_10k_files(answer=-1):
+    try:
+        assert_equal( 71, answer)
+        print('number of *.txt files larger than 10k identified correctly.')
+    except:
+        print('number of *.txt files larger than 10k NOT identified correctly.')
 
 
