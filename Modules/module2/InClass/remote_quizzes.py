@@ -8,7 +8,7 @@ def nci_ftp_quiz():
 
     try:
         assert_true(os.path.exists("/home/jovyan/work/nci/var_citations.txt"))
-        print("var_citations.txt exiss in the correct location")
+        print("var_citations.txt exist in the correct location")
         try:
             df1 = pd.read_table("/home/jovyan/work/nci/var_citations.txt")
             df2 = pd.read_table("ftp://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/var_citations.txt")
