@@ -8,8 +8,11 @@ def oct_17(answer=-1):
         print('number of Oct. 17 NOT identified correctly.')
 
 def concepts(answer=-1):
+    with open("/home/jovyan/DATA/Misc/doid.obo") as f0:
+        onto = f0.read()
+
     try:
-        assert_equal(526703, answer)
+        assert_equal(onto.count("[Term]"), answer)
         print('number of concepts identified correctly.')
     except:
         print('number of concepts NOT identified correctly.')
