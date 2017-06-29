@@ -102,7 +102,6 @@ def file_creator_quiz():
                                                  "OutbreakDetection", 
                                                  "README.md")), True)
         print("README.md created correctly")
-        correct += 1
     except:
         print("README.md NOT created correctly")
     try:
